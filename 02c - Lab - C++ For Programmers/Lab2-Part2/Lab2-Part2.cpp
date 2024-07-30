@@ -370,7 +370,7 @@ void showParticleArray_2(Particle arr[], int size)
 	 if (true) {
 		 cout << "Array as arr[] ..." << endl;
 		 cout << " - sizeof entire array? " << sizeof(arr) << endl;
-		 cout << " - sizeof array element? " << sizeof(arr) << endl;
+		 cout << " - sizeof array element? " << sizeof(arr[0]) << endl;
 		 cout << " - array size n is: " << (sizeof(arr) / sizeof(arr[0])) << endl;
 	 }
 	 */
