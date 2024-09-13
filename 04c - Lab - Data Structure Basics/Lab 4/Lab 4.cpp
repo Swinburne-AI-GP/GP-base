@@ -194,7 +194,7 @@ void array_demo_1() {
 		cout << *itr2 << " ";
 	}
 	cout << endl;
-	// ##Q.1.4 In the code above, what is the type of itr2?
+	// ##Q.1 .4 In the code above, what is the type of itr2?
 
 	// ... using auto & for-each iterator
 	cout << "a1 contents using auto & for-each iterator: " << endl;
