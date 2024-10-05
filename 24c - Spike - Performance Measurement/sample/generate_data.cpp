@@ -74,7 +74,16 @@ int main(int argc, char* argv[]) {
     }
 
     json output = social_posts;
-    std::ofstream file("./data/social_posts.json");
+    // Check if the directory exists, and create it if it does not
+    std::string directory = "./data";
+    if (!filesystem::exists(directory)) {
+        if (!filesystem::create_directories(directory)) {
+            std::cerr << "Error creating directory: " << directory << std::endl;
+            return 1;
+        }
+    }
+
+    std::ofstream file(directory + "/social_posts.json");
     file << output.dump(4); // Pretty print with 4 spaces
     file.close();
 

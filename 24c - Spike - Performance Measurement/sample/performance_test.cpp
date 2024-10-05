@@ -124,7 +124,14 @@ void measure_performance(
 
 int main() {
 	// Read JSON data from file
-	json j = readJsonFromFile("./data/social_posts.json");
+	json j;
+	try {
+		j = readJsonFromFile("./data/social_posts.json");
+	}catch (const std::exception& e) {
+		std::cerr << "Error reading JSON from file: " << e.what() << std::endl;
+		std::cerr << "Please run generate_data first - and make sure you provide the command line parameters generate_data expects." << std::endl;
+		return 1;
+	}
 
 	// Measure performance of simple loop
 	measure_performance("Simple Loop", searchJsonSimpleLoop, j);
